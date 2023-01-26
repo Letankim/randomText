@@ -1,0 +1,85 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.boxForm {
+    margin: 20px;
+    width: 500px;
+    height: 50px;
+    position: relative;
+}
+
+.boxForm input {
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+}
+
+.boxForm span {
+    position: absolute;
+    padding: 5px;
+    background-color: #fff;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    transition: all 0.2s linear;
+}
+
+.boxForm span.active {
+    top: calc(-50% - 5px);
+    transform: translateY(50%);
+}
+.random {
+    width: 1200px;
+    padding: 15px;
+    margin: 20px;
+    border: 1px dashed #333;
+}
+.btn {
+    margin-top: 15px;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.btn button {
+    padding: 10px 30px;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.copy {
+    display: block;
+    text-decoration: none;
+    padding: 10px 30px;
+    background-color: antiquewhite;
+}
+
+.done {
+    display: none;
+    margin: 10px 20px;
+    color: green;
+}
+
+.done.active {
+    display: block;
+}
+
+@media (max-width: 739px) {
+    body {
+        /* margin: 0 10px; */
+        width: 100%;
+        overflow: hidden;
+    }
+    .boxForm {
+        width: 290px;
+    }
+    .random {
+        width: unset;
+    }
+}
