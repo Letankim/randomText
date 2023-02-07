@@ -8,25 +8,31 @@ input.onblur = function() {
         span.classList.remove("active");
     }
 }
+var result = new Array();
 var boxSoluong = document.querySelector('.btn button');
 boxSoluong.addEventListener('click', function() {
-    var result = new Array();
-    var inputValue = document.querySelector('input').value;
+    handleRandom();
+});
+input.addEventListener('keydown', function(e) {
+    if(e.keyCode == 13) {
+        handleRandom();
+    }
+})
+
+function handleRandom() {
+    result = [];
+    var inputValue = input.value;
     if(inputValue == "") {
-        alert("Please enter your words you want");
+        alert("Hãy điền số từ bạn muốn!!");
         return 0;
     }
-    var index = 0;
-    var laplai = setInterval(() => {
-        var inputValue = document.querySelector('input').value;
-        if(index == inputValue) {
-            clearInterval(laplai);
+    for(var i = 1; i <= inputValue; i++) {
+        random(Math.floor(Math.random() * 10) + 3);
+        if(i == inputValue) {
             result = result.join(' ');
             document.querySelector(".random").innerHTML = result;
         }
-        random(Math.floor(Math.random() * 10) + 3);
-        index++;
-    }, 0);
+    }
     function random(soluong) {
         let chuhoa = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         let chuthuong = "abcdefghijklmnopqrstuvwxyz";
@@ -48,7 +54,7 @@ boxSoluong.addEventListener('click', function() {
         arr = arr.join('');
         result.push(arr);
     }
-})
+}
 
 let hre = document.querySelector('.copy'),
     copyDone = document.querySelector('.done');
