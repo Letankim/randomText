@@ -1,5 +1,10 @@
 var input = document.querySelector('input'),
-    span = document.querySelector('span');
+    span = document.querySelector('span'),
+    titleInput = document.querySelector('.title');
+//  xử lí handle khi focus vào input
+titleInput.onclick = () => {
+    input.focus();
+}
 input.onfocus = function() {
     span.classList.add("active");
 }
@@ -8,8 +13,9 @@ input.onblur = function() {
         span.classList.remove("active");
     }
 }
+// tạo array chứa thông tin
 var result = new Array();
-var boxSoluong = document.querySelector('.btn button');
+var boxSoluong = document.querySelector('.btn');
 boxSoluong.addEventListener('click', function() {
     handleRandom();
 });
@@ -19,11 +25,38 @@ input.addEventListener('keydown', function(e) {
     }
 })
 
+let clear = document.querySelector(".btn_clear");
+if(clear) {
+    clear.onclick = () => {
+        let text = document.querySelector(".random");
+        text.innerHTML = "";
+    }
+}
+
+let hre = document.querySelector('.copy'),
+    copyDone = document.querySelector('.done');
+if(hre) {
+    hre.addEventListener('click', function(e) {
+        e.preventDefault();
+        let text = document.querySelector(".random").innerText;
+        let input = document.createElement('input');
+        document.body.appendChild(input);
+        input.value = text;
+        input.select();
+        document.execCommand('copy'); 
+        input.remove();
+        copyDone.classList.add('active');
+        setTimeout(function() {
+            copyDone.classList.remove('active');
+        }, 5000)
+    });
+}
+
 function handleRandom() {
     result = [];
     var inputValue = input.value;
-    if(inputValue == "") {
-        alert("Hãy điền số từ bạn muốn!!");
+    if(inputValue == "" || inputValue <= 0 || isNaN(inputValue)) {
+        alert("Trường này phải là 1 số dương!!");
         return 0;
     }
     for(var i = 1; i <= inputValue; i++) {
@@ -54,23 +87,4 @@ function handleRandom() {
         arr = arr.join('');
         result.push(arr);
     }
-}
-
-let hre = document.querySelector('.copy'),
-    copyDone = document.querySelector('.done');
-if(hre) {
-    hre.addEventListener('click', function(e) {
-        e.preventDefault();
-        let text = document.querySelector(".random").innerText;
-        let input = document.createElement('input');
-        document.body.appendChild(input) ;
-        input.value = text;
-        input.select();
-        document.execCommand('copy'); 
-        input.remove();
-        copyDone.classList.add('active');
-        setTimeout(function() {
-            copyDone.classList.remove('active');
-        }, 5000)
-    });
 }
