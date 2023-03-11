@@ -4,9 +4,11 @@
     box-sizing: border-box;
 }
 body {
+    min-height: 100vh;
     position: relative;
     background-color: #fafafa;
     transition: all 0.25s linear;
+    padding: 20px 0px;
 }
 
 body.active {
@@ -14,7 +16,7 @@ body.active {
 }
 
 .boxForm {
-    margin: 20px;
+    margin: 0px 20px;
     width: 500px;
     height: 50px;
     position: relative;
