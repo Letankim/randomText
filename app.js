@@ -108,4 +108,3 @@ btn_change.onclick = function() {
     }
     localStorage.setItem("isDark", JSON.stringify(isDark));
 }
-
