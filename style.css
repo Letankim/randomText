@@ -26,7 +26,6 @@ body.active {
     outline: none;
     border: 1px solid #333;
     border-radius: 5px;
-<<<<<<< HEAD
     transition: all 0.25s linear;
 }
 body.active .boxForm input {
@@ -43,15 +42,6 @@ body.active .boxForm .title {
     background-color: #333;
     color: #fafafa;
 }
-=======
-}
-.boxForm input:focus {
-    border: 2px solid #224034;
-    border-radius: 5px;
-}
-
-
->>>>>>> 57cb06c8700e4ca0ab8ceeb60bf4564bb7f420e2
 .boxForm .title {
     position: absolute;
     padding: 5px;
@@ -74,16 +64,12 @@ body.active .boxForm .title {
     margin: 20px;
     border: 1px dashed #806666;
     border-radius: 5px;
-<<<<<<< HEAD
     transition: all 0.25s linear;
 }
 body.active .random {
     color: #fafafa;
     border: 1px dashed #ada9a9;
 }
-=======
-}
->>>>>>> 57cb06c8700e4ca0ab8ceeb60bf4564bb7f420e2
 .list_btn{
     margin-top: 15px;
     margin-left: 20px;
@@ -156,7 +142,6 @@ body.active .random {
         width: unset;
     }
 }
-<<<<<<< HEAD
 
 /* dard mode */
 
@@ -195,5 +180,3 @@ body.active .random {
     right: 2.5px;
     background-color: #000;
 }
-=======
->>>>>>> 57cb06c8700e4ca0ab8ceeb60bf4564bb7f420e2
