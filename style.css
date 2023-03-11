@@ -163,7 +163,9 @@ body.active .random {
 }
 .change_btn {
     position: absolute;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 50%;
     height: 35px;
     top: 50%;
@@ -181,4 +183,11 @@ body.active .random {
     left: unset;
     right: 2.5px;
     background-color: #000;
+}
+.change_btn i {
+    color: #000;
+    font-size: 19px;
+}
+.box_dark_mode.active .change_btn i {
+    color: #fff;
 }
