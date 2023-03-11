@@ -91,13 +91,15 @@ function handleRandom() {
 
 // dard mode
 let btn_change = document.querySelector(".change_btn"),
-    box_dark = document.querySelector(".box_dark_mode"),
+    box_dark = document.querySelector(".box_dark_mode")
+    icon_dark_mode = document.querySelector(".change_btn i"),
     body_web = document.querySelector("body");
 //  check isDark
 let getDark = JSON.parse(localStorage.getItem("isDark"));
 if(getDark == true) {
     box_dark.classList.toggle("active");
     body_web.classList.toggle("active");
+    icon_dark_mode.setAttribute("class", "bx bx-sun");
 }
 btn_change.onclick = function() {
     box_dark.classList.toggle("active");
@@ -105,6 +107,10 @@ btn_change.onclick = function() {
     let isDark = false;
     if(box_dark.classList.contains("active")){
         isDark = true;
+        icon_dark_mode.setAttribute("class", "bx bx-sun");
+    } else {
+        icon_dark_mode.setAttribute("class", "bx bx-moon");
     }
     localStorage.setItem("isDark", JSON.stringify(isDark));
 }
+
